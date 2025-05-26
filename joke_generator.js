@@ -14,8 +14,11 @@ const getJoke =() =>{
             const joke = JSON.parse(data);
             console.log(joke);
             console.log(`Here is a random $[joke.type] joke for you:`);
-            console.log(`chalk.red(${joke.setup})`);
-            console.log(`chalk.blue.bgRed.bold(${joke.punchline})`);
+            console.log(chalk.red(`${joke.setup}`));
+            console.log(chalk.blue.bgRed.bold(`${joke.punchline}`));
+        });
+        response.on('error', (error) => {
+            console.log(error);
         });
 
         })
